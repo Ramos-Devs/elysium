@@ -1,65 +1,97 @@
-import Image from 'next/image';
-
-export default function Home() {
+export default function LoginPage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{' '}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{' '}
-            or the{' '}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{' '}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="min-h-screen flex flex-col items-center justify-center bg-white">
+      {/** Example Logo */}
+      <div className="mb-6 flex flex-col items-center">
+        <svg
+          width="200"
+          height="100"
+          viewBox="0 0 180 80"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <text
+            x="50%"
+            y="45%"
+            dominantBaseline="middle"
+            textAnchor="middle"
+            className="fill-black text-4xl font-bold"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            DEV
+          </text>
+
+          <path
+            d="M45 55 C75 70, 100 45, 130 55"
+            className="stroke-yellow"
+            strokeWidth="6"
+            fill="none"
+            strokeLinecap="round"
+          />
+        </svg>
+      </div>
+
+      <div className="w-full px-4">
+        <div className="max-w-sm mx-auto bg-white shadow-[4px_4px_10px_rgba(0,0,0,0.15)] overflow-hidden">
+          {/** Encabezado */}
+          <div className="bg-gray-100/60 text-black text-2xl font-semibold px-4 py-3 border-b border-gray-200">
+            Iniciar sesión
+          </div>
+
+          {/* Contenido */}
+          <div className="p-4">
+            <div className="mb-3">
+              <label
+                htmlFor="user"
+                className="block text-base font-medium text-black mb-1 tracking-tight"
+              >
+                Usuario
+              </label>
+              <input
+                id="user"
+                name="user"
+                type="text"
+                placeholder="Nombre de usuario o email"
+                className="w-full border border-gray-200 bg-gray-50 px-2.5 py-1 text-black 
+                           text-xs focus:outline-none focus:ring-1"
+              />
+            </div>
+
+            <div className="mb-3">
+              <label
+                htmlFor="password"
+                className="block text-base font-medium text-black mb-1 tracking-tight"
+              >
+                Contraseña
+              </label>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                placeholder="••••••••"
+                className="w-full border border-gray-200 bg-gray-50 px-2.5 py-1 text-black 
+                           text-xs focus:outline-none focus:ring-1"
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-yellow text-black font-semibold py-0.5 mt-3 text-md
+                         border border-yellowDark shadow-sm hover:bg-yellowDark transition-all tracking-tight"
+            >
+              Continuar
+            </button>
+          </div>
         </div>
-      </main>
+      </div>
+
+      {/* Pie */}
+      <p className="text-xs text-gray-400 mt-5 text-center font-medium tracking-wide">
+        Al continuar, aceptas los{' '}
+        <span className="text-blue-500 hover:underline cursor-pointer font-semibold">
+          términos y condiciones
+        </span>
+        .
+      </p>
     </div>
   );
 }
