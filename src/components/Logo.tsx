@@ -1,4 +1,4 @@
-export function Logo() {
+export function LogoDEV() {
   return (
     <div className="mb-6 flex flex-col items-center">
       <svg
