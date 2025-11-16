@@ -1,7 +1,7 @@
 import prettierPlugin from 'eslint-plugin-prettier';
 import * as next from 'eslint-config-next';
 
-export default [
+const eslintConfig = [
   {
     ignores: ['node_modules', '.next', 'dist'],
   },
@@ -17,3 +17,5 @@ export default [
     },
   },
 ];
+
+export default eslintConfig;
